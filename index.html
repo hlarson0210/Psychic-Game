@@ -44,6 +44,7 @@
         console.log(guessesText);
         console.log(lettersGuessedText);
 
+
         document.onkeyup = function (event) {
 
             var userGuess = event.key;
@@ -51,9 +52,13 @@
             console.log(userGuess);
             console.log(computerGuess);
 
+            //function adderReturn(r, s, t, u, v, w, x, y, z) {
+            //    return r + s + t + u + v + w + x + y + z;
+            //}
+            //var results = adderReturn(userGuess);
 
-            lettersGuessedText.textContent = "Your Guesses so far: " + [userGuess];
-            
+            lettersGuessedText.textContent = "Your Guesses so far: " + userGuess;
+
 
             if (userGuess === computerGuess) {
                 guessesLeft = 9;
@@ -64,10 +69,12 @@
                 winText.textContent = "Wins: " + wins;
                 console.log(lettersGuessedText);
                 console.log(losses);
+                lettersGuessedText.textContent = "Your Guesses so far: "
 
             } else if (userGuess !== computerGuess) {
                 guessesLeft--;
                 console.log(guessesLeft);
+                lettersGuessedText.textContent = "Your Guesses so far: " + userGuess;
                 if (guessesLeft === 0) {
                     losses++;
                     guessesLeft = 9;
