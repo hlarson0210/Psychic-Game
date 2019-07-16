@@ -56,16 +56,14 @@
             
 
             if (userGuess === computerGuess) {
+                guessesLeft = 9;
+                guessesText.textContent = "Guesses Left: " + guessesLeft;
+                console.log(guessesLeft);
                 wins++;
                 console.log(wins);
                 winText.textContent = "Wins: " + wins;
                 console.log(lettersGuessedText);
-                console.log(guessesLeft);
-                //next step needs to reset the "Guesses Left"
-                guessesLeft = 9;
-                console.log(guessesLeft);
                 console.log(losses);
-                //lettersGuessedText.textContent = "";
 
             } else if (userGuess !== computerGuess) {
                 guessesLeft--;
@@ -73,13 +71,8 @@
                 if (guessesLeft === 0) {
                     losses++;
                     guessesLeft = 9;
+                    guessesText.textContent = "Guesses Left: " + guessesLeft;
                     lettersGuessedText.textContent = "Your Guesses so far: ";
-                    //if (userGuess === computerGuess) {
-                    //wins++;
-                    //next step needs to reset the "Guesses Left"
-                    //guessesLeft = 9;
-                    //lettersGuessedText.textContent = "";
-                    //};
                 };
                 guessesText.textContent = "Guesses Left: " + guessesLeft;
                 lossText.textContent = "Losses: " + losses;
