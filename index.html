@@ -1,20 +1,92 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <Title>Psychic Game</Title>
-    <script src="assets/javascript/game.js"></script>
+    <!-- <script src="assets/javascript/game.js"></script>-->
 </head>
 
 <body>
-<h1>The Psychic Game</h1>
-<div>
-    <p>Guess what letter I'm thinking of</p>
-    <p id="wins">Wins: </p>
-    <p id="losses">Losses: </p>
-    <p id="guesses-left">Guesses Left: </p>
-    <p id="guessed">Your Guesses so far: </p>
-</div>
+    <h1>The Psychic Game</h1>
+    <div>
+        <p id="instructions">Guess what letter I'm thinking of</p>
+        <p id="wins">Wins: 0</p>
+        <p id="losses">Losses: 0</p>
+        <p id="guesses-left">Guesses Left: 9</p>
+        <p id="guessed">Your Guesses so far: </p>
+    </div>
+
+
+    <script>
+        var computerChoices = ["q"] //, "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
+
+        console.log(computerChoices.length);
+
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 9;
+        var guessed = [];
+
+        console.log(wins);
+        console.log(losses);
+        console.log(guessesLeft);
+        console.log(guessed);
+
+        var instructionText = document.getElementById("instructions");
+        var winText = document.getElementById("wins");
+        var lossText = document.getElementById("losses");
+        var guessesText = document.getElementById("guesses-left");
+        var lettersGuessedText = document.getElementById("guessed");
+
+        console.log(winText);
+        console.log(lossText);
+        console.log(guessesText);
+        console.log(lettersGuessedText);
+
+        document.onkeyup = function (event) {
+
+            var userGuess = event.key;
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(userGuess);
+            console.log(computerGuess);
+
+
+            lettersGuessedText.textContent = "Your Guesses so far: " + [userGuess];
+            
+
+            if (userGuess === computerGuess) {
+                wins++;
+                console.log(wins);
+                winText.textContent = "Wins: " + wins;
+                console.log(lettersGuessedText);
+                console.log(guessesLeft);
+                //next step needs to reset the "Guesses Left"
+                guessesLeft = 9;
+                console.log(guessesLeft);
+                console.log(losses);
+                //lettersGuessedText.textContent = "";
+
+            } else if (userGuess !== computerGuess) {
+                guessesLeft--;
+                console.log(guessesLeft);
+                if (guessesLeft === 0) {
+                    losses++;
+                    guessesLeft = 9;
+                    lettersGuessedText.textContent = "Your Guesses so far: ";
+                    //if (userGuess === computerGuess) {
+                    //wins++;
+                    //next step needs to reset the "Guesses Left"
+                    //guessesLeft = 9;
+                    //lettersGuessedText.textContent = "";
+                    //};
+                };
+                guessesText.textContent = "Guesses Left: " + guessesLeft;
+                lossText.textContent = "Losses: " + losses;
+            }
+        }
+
+    </script>
 
 </body>
 

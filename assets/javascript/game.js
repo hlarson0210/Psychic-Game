@@ -14,6 +14,7 @@ console.log(losses);
 console.log(guessesLeft);
 console.log(guessed);
 
+var instructionText = document.getElementById("instructions");
 var winText = document.getElementById("wins");
 var lossText = document.getElementById("losses");
 var guessesText = document.getElementById("guesses-left");
@@ -34,29 +35,26 @@ document.onkeyup = function (event) {
     if (userGuess === computerGuess) {
         wins++;
         console.log(wins);
-        //lettersGuessedText.textContent = "";
         console.log(lettersGuessedText);
         console.log(guessesLeft);
+        //next step needs to reset the "Guesses Left"
         guessesLeft = 9;
         console.log(guessesLeft);
+        console.log(losses);
+        //lettersGuessedText.textContent = "";
 
-        //next step needs to reset the "Guesses Left" and clear the "Your Guesses so far"
 
-    } else if(userGuess !== computerGuess){
+    } else if (userGuess !== computerGuess) {
         guessesLeft--;
         console.log(guessesLeft);
-        //var i = lettersGuessedText;
-        //for (i = 0; i < guessed.length; i--);
-        //guessedColumn.textContent = [i];
-        if (guessesLeft === 0){
+        if (guessesLeft === 0) {
             losses++;
             guessesLeft = 9;
-
+            lettersGuessedText.textContent = "";
         };
-        console.log(losses);
-    }
 
-    // winColumn.textContent = wins;
-    //lettersGuessedText.textContent = "You chose: " + userGuess;
-    //winText.textContent = wins;
+        //instructionText.textContent = "";
+        //lettersGuessedText.textContent = "You chose: " + userGuess;
+        //winText.textContent = wins;
+    }
 };
