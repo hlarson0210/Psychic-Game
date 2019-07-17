@@ -29,6 +29,8 @@ console.log(lettersGuessedText);
 document.onkeyup = function (event) {
 
     var userGuess = event.key;
+    //would add code here to only allow letters to be returned as a userChoice
+    //would add code here to only allow the user to choose a letter one time in a game
     if (guessesLeft === 9) {
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     }
