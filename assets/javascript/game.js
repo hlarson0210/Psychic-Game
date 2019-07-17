@@ -44,12 +44,9 @@ document.onkeyup = function (event) {
         lettersGuessedText.textContent = "Your Guesses so far: " + (guessed[j]);
     }
 
-    //function adderReturn(r, s, t, u, v, w, x, y, z) {
-    //    return r + s + t + u + v + w + x + y + z;
-    //}
+  
     //var results = adderReturn(userGuess);
 
-    //lettersGuessedText.textContent = "Your Guesses so far: " + userGuess;
 
 
     if (userGuess === computerGuess) {
@@ -69,7 +66,6 @@ document.onkeyup = function (event) {
         console.log(guessesLeft);
         lettersGuessedText.textContent = "Your Guesses so far: " + guessed;
         console.log(guessed);
-        //lettersGuessedText.textContent = "Your Guesses so far: " + guessed;
         if (guessesLeft === 0) {
             losses++;
             guessesLeft = 9;
