@@ -35,18 +35,12 @@ document.onkeyup = function (event) {
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     }
     console.log(userGuess);
-
+    console.log(computerGuess);
 
 
 
     guessed.push(userGuess);
 
-    for (var j = 0; j < guessed.length; j++) {
-        lettersGuessedText.textContent = "Your Guesses so far: " + (guessed[j]);
-    }
-
-  
-    //var results = adderReturn(userGuess);
 
 
 
