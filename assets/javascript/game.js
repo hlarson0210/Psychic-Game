@@ -1,4 +1,4 @@
-var computerChoices = ["q"] //, "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
+var computerChoices = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
 
 console.log(computerChoices.length);
 
@@ -33,8 +33,7 @@ document.onkeyup = function (event) {
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     }
     console.log(userGuess);
-    console.log(computerGuess);
-    //var letters;
+
 
 
 
