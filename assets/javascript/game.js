@@ -38,12 +38,9 @@ document.onkeyup = function (event) {
     console.log(computerGuess);
 
 
-
     guessed.push(userGuess);
 
-
-
-
+    
     if (userGuess === computerGuess) {
         guessesLeft = 9;
         guessesText.textContent = "Guesses Left: " + guessesLeft;
