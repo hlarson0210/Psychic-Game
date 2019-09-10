@@ -27,9 +27,15 @@ console.log(lettersGuessedText);
 
 
 document.onkeyup = function (event) {
-
     var userGuess = event.key;
-    //would add code here to only allow letters to be returned as a userChoice
+    var letters = /^[a-zA-Z]+$/;
+    if (userGuess.match(letters)) {
+        guessed.push(userGuess);
+    }
+    else {
+        return false;
+    }
+
     //would add code here to only allow the user to choose a letter one time in a game
     if (guessesLeft === 9) {
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -38,9 +44,7 @@ document.onkeyup = function (event) {
     console.log(computerGuess);
 
 
-    guessed.push(userGuess);
 
-    
     if (userGuess === computerGuess) {
         guessesLeft = 9;
         guessesText.textContent = "Guesses Left: " + guessesLeft;
@@ -68,4 +72,8 @@ document.onkeyup = function (event) {
         guessesText.textContent = "Guesses Left: " + guessesLeft;
         lossText.textContent = "Losses: " + losses;
     }
+}
+
+function allLetter(event) {
+    
 }
