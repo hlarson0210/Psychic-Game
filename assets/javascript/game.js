@@ -7,10 +7,6 @@ var losses = 0;
 var guessesLeft = 9;
 var guessed = [];
 
-console.log(wins);
-console.log(losses);
-console.log(guessesLeft);
-console.log(guessed);
 
 var instructionText = document.getElementById("instructions");
 var winText = document.getElementById("wins");
@@ -18,12 +14,6 @@ var lossText = document.getElementById("losses");
 var guessesText = document.getElementById("guesses-left");
 var lettersGuessedText = document.getElementById("guessed");
 var computerGuess = "";
-//set array for letters only - no letter return "false"
-
-console.log(winText);
-console.log(lossText);
-console.log(guessesText);
-console.log(lettersGuessedText);
 
 
 document.onkeyup = function (event) {
@@ -40,28 +30,18 @@ document.onkeyup = function (event) {
     if (guessesLeft === 9) {
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     }
-    console.log(userGuess);
-    console.log(computerGuess);
-
-
 
     if (userGuess === computerGuess) {
         guessesLeft = 9;
         guessesText.textContent = "Guesses Left: " + guessesLeft;
-        console.log(guessesLeft);
         wins++;
-        console.log(wins);
         winText.textContent = "Wins: " + wins;
-        console.log(lettersGuessedText);
-        console.log(losses);
         lettersGuessedText.textContent = "Your Guesses so far: "
         guessed = [];
 
     } else if (userGuess !== computerGuess) {
         guessesLeft--;
-        console.log(guessesLeft);
         lettersGuessedText.textContent = "Your Guesses so far: " + guessed;
-        console.log(guessed);
         if (guessesLeft === 0) {
             losses++;
             guessesLeft = 9;
@@ -72,8 +52,4 @@ document.onkeyup = function (event) {
         guessesText.textContent = "Guesses Left: " + guessesLeft;
         lossText.textContent = "Losses: " + losses;
     }
-}
-
-function allLetter(event) {
-    
 }
