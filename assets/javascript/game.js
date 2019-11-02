@@ -8,7 +8,6 @@ var guessesLeft = 9;
 var guessed = [];
 
 
-var instructionText = document.getElementById("instructions");
 var winText = document.getElementById("wins");
 var lossText = document.getElementById("losses");
 var guessesText = document.getElementById("guesses-left");

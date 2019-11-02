@@ -4,22 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <Title>Psychic Game</Title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body style="background-image: url(http://senjamatstudio.no/wp-content/uploads/2015/12/nordlys.jpg)">
-    <h1>The Psychic Game</h1>
-    <div class="border">
-        <p id="instructions">Guess what letter I'm thinking of</p>
-        <p id="wins">Wins: 0</p>
-        <p id="losses">Losses: 0</p>
-        <p id="guesses-left">Guesses Left: 9</p>
-        <p id="guessed">Your Guesses so far: </p>
+
+    <div class="container">
+        <div class="row">
+            <div class="center">
+                <h1>The Psychic Game</h1>
+            </div>
+
+            <div class="border row">
+                <div class="center col s6 offset-s3">
+                    <p>Guess what letter I'm thinking of by typing on the keypad...you have 9 guesses</p>
+                    <p>If you get it right, your Wins will increase</p>
+                    <p>If you get it wrong, after 9 times, you lose</p>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="border row">
+                <div class="center col s3 offset-s1">
+                    <p id="wins">Wins: 0</p>
+                </div>
+                <div class="center col s4">
+                    <p id="guesses-left">Guesses Left: 9</p>
+                    <p id="guessed">Your Guesses so far: </p>
+                </div>
+                <div class="center col s3">
+                    <p id="losses">Losses: 0</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
 
     <style>
         h1 {
@@ -29,6 +50,10 @@
 
         div {
             color: white;
+        }
+
+        p {
+            margin: 0;
         }
     </style>
 
